@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package sale_service;
+
+option go_package = "genproto/sale_service";
+
+message SaleProduct {
+    string sale_id = 1;
+    string product_id = 2;
+    int64 quantity = 3;
+    float price = 4;
+}
+
+message SaleProductCreateReq {
+    string sale_id = 1;
+    string product_id = 2;
+    int64 quantity = 3;
+    float price = 4;
+}
+
+message SaleProductCreateResp {
+    string msg = 1;
+}
+
+message SaleProductGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+}
+
+message SaleProductGetListResp {
+    repeated SaleProduct saleProducts = 1;
+    int64 count = 2;
+}
+
+message SaleProductIdReq {
+    string sale_id = 1;
+}
+
+message SaleProductUpdateReq {
+    string sale_id = 1;
+    string product_id = 2;
+    int64 quantity = 3;
+    float price = 4;
+}
+
+message SaleProductUpdateResp {
+    string msg = 1;
+}
+
+message SaleProductDeleteResp {
+    string msg = 1;
+}
