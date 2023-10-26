@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package staff_service;
+
+option go_package = "genproto/staff_service";
+
+message StaffTariff {
+    string id = 1;
+    string name = 2;
+    string typ = 3;
+    float amount_for_cash = 4;
+    float amount_for_card = 5;
+    string created_at = 7;
+    string updated_at = 8;
+    string deleted_at = 9;
+}
+
+message TariffCreateReq {
+    string name = 1;
+    string typ = 2;
+    float amount_for_cash = 3;
+    float amount_for_card = 4;
+}
+
+message TariffCreateResp {
+    string msg = 1;
+}
+
+message TariffGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string typ = 3;
+}
+
+message TariffGetListResp {
+    repeated StaffTariff tariffs = 1;
+    int64 count = 2;
+}
+
+message TariffIdReq {
+    string id = 1;
+}
+
+message TariffUpdateReq {
+    string id = 1;
+    string name = 2;
+    string typ = 3;
+    float amount_for_cash = 4;
+    float amount_for_card = 5;
+}
+
+message TariffUpdateResp {
+    string msg = 1;
+}
+
+message TariffDeleteResp {
+    string msg = 1;
+}

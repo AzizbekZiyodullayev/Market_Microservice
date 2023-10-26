@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package branch_service;
+
+option go_package = "genproto/branch_service";
+
+message BranchProduct {
+    string product_id = 1;
+    string branch_id = 2;
+    int64 count = 3;
+    string created_at = 4;
+    string updated_at = 5;
+    string deleted_at = 6;
+}
+
+message BranchProductCreateReq {
+    string product_id = 1;
+    string branch_id = 2;
+    int64 count = 3;
+}
+
+message BranchProductCreateResp {
+    string msg = 1;
+}
+
+message BranchProductGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string branch_id = 3;
+    string product_id = 4;
+}
+
+message BranchProductGetListResp {
+    repeated BranchProduct branch_products = 1;
+    int64 count = 2;
+}
+
+message BranchProductIdReq {
+    string product_id = 1;
+}
+
+message BranchProductUpdateReq {
+    string product_id = 1;
+    string branch_id = 2;
+    int64 count = 3;
+}
+
+message BranchProductUpdateResp {
+    string msg = 1;
+}
+
+message BranchProductDeleteResp {
+    string msg = 1;
+}

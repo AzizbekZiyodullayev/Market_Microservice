@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package sale_service;
+
+option go_package = "genproto/sale_service";
+
+import "branch_product_transaction.proto";
+
+service BrPrTransactionService {
+    rpc Create(BrPrTrCreateReq) returns (BrPrTrCreateResp) {}
+    rpc GetList(BrPrTrGetListReq) returns (BrPrTrGetListResp) {}
+    rpc GetById(BrPrTrIdReq) returns (BrPrTransaction) {}
+    rpc Update(BrPrTrUpdateReq) returns (BrPrTrUpdateResp) {}
+    rpc Delete(BrPrTrIdReq) returns (BrPrTrDeleteResp) {}
+}
