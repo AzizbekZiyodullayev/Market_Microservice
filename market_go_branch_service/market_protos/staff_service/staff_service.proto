@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package staff_service;
+
+option go_package = "genproto/staff_service";
+
+import "staff.proto";
+
+service StaffService {
+    rpc Create(StaffCreateReq) returns (StaffCreateResp) {}
+    rpc GetList(StaffGetListReq) returns (StaffGetListResp) {}
+    rpc GetById(StaffIdReq) returns (Staff) {}
+    rpc Update(StaffUpdateReq) returns (StaffUpdateResp) {}
+    rpc Delete(StaffIdReq) returns (StaffDeleteResp) {}
+}

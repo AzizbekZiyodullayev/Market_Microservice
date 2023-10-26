@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package staff_service;
+
+option go_package = "genproto/staff_service";
+
+message Staff {
+    string id = 1;
+    string branch_id = 2;
+    string tariff_id = 3;
+    string name = 4;
+    string typ = 5;
+    float balance = 6;
+    string birth_date = 7;
+    string created_at = 8;
+    string updated_at = 9;
+    string deleted_at = 10;
+}
+
+message StaffCreateReq {
+    string branch_id = 1;
+    string tariff_id = 2;
+    string name = 3;
+    string typ = 4;
+    float balance = 5;
+    string birth_date = 6;
+}
+
+message StaffCreateResp {
+    string msg = 1;
+}
+
+message StaffGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string name = 3;
+    string branch_id = 4;
+    string tarif_id = 5;
+}
+
+message StaffGetListResp {
+    repeated Staff staffs = 1;
+    int64 count = 2;
+}
+
+message StaffIdReq {
+    string id = 1;
+}
+
+message StaffUpdateReq {
+    string id = 1;
+    string branch_id = 2;
+    string tariff_id = 3;
+    string name = 4;
+    string typ = 5;
+    float balance = 6;
+    string birth_date = 7;
+}
+
+message StaffUpdateResp {
+    string msg = 1;
+}
+
+message StaffDeleteResp {
+    string msg = 1;
+}
