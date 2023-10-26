@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package product_service;
+
+option go_package = "genproto/product_service";
+
+import "category.proto";
+
+service CategoryService{
+    rpc Create(CategoryCreateReq) returns (CategoryCreateResp) {};
+    rpc GetList(CategoryGetListReq) returns (CategoryGetListResp) {};
+    rpc GetById(CategoryIdReq) returns (Category) {};
+    rpc Update(CategoryUpdateReq) returns (CategoryUpdateResp) {};
+    rpc Delete(CategoryIdReq) returns (CategoryDeleteResp) {};
+}

@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package sale_service;
+
+option go_package = "genproto/sale_service";
+
+message StaffTransaction {
+    string id = 1;
+    string sale_id = 2;
+    string staff_id = 3;
+    string typ = 4;
+    string source_typ = 5;
+    float amount = 6;
+    string about_text = 7;
+    string created_at = 8;
+    string updated_at = 9;
+    string deleted_at = 10;
+}
+
+message StaffTrCreateReq {
+    string sale_id = 1;
+    string staff_id = 2;
+    string typ = 3;
+    string source_typ = 4;
+    float amount = 5;
+    string about_text = 6;
+}
+
+message StaffTrCreateResp {
+    string msg = 1;
+}
+
+message StaffTrGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string sale_id = 3;
+    string typ = 4;
+    string staff_id = 5;
+    float amountFrom = 6;
+    float amountTo = 7;
+}
+
+message StaffTrGetListResp {
+    repeated StaffTransaction staffTransactions = 1;
+    int64 count = 2;
+}
+
+message StaffTrIdReq {
+    string id = 1;
+}
+
+message StaffTrUpdateReq {
+    string id = 1;
+    string sale_id = 2;
+    string staff_id = 3;
+    string typ = 4;
+    string source_typ = 5;
+    float amount = 6;
+    string about_text = 7;
+}
+
+message StaffTrUpdateResp {
+    string msg = 1;
+}
+
+message StaffTrDeleteResp {
+    string msg = 1;
+}
