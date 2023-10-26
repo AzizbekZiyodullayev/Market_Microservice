@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package sale_service;
+
+option go_package = "genproto/sale_service";
+
+import "staff_transaction.proto";
+
+service StaffTransactionService {
+    rpc Create(StaffTrCreateReq) returns (StaffTrCreateResp) {}
+    rpc GetList(StaffTrGetListReq) returns (StaffTrGetListResp) {}
+    rpc GetById(StaffTrIdReq) returns (StaffTransaction) {}
+    rpc Update(StaffTrUpdateReq) returns (StaffTrUpdateResp) {}
+    rpc Delete(StaffTrIdReq) returns (StaffTrDeleteResp) {}
+}

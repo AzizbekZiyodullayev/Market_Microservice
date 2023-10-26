@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package branch_service;
+
+option go_package = "genproto/branch_service";
+
+import "branch_product.proto";
+
+service BranchProductService {
+    rpc Create(BranchProductCreateReq) returns (BranchProductCreateResp) {}
+    rpc GetList(BranchProductGetListReq) returns (BranchProductGetListResp) {};
+    rpc GetById(BranchProductIdReq) returns (BranchProduct) {};
+    rpc Update(BranchProductUpdateReq) returns (BranchProductUpdateResp) {};
+    rpc Delete(BranchProductIdReq) returns (BranchProductDeleteResp) {};
+}

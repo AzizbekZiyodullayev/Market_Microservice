@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package sale_service;
+
+option go_package = "genproto/sale_service";
+
+message Sale {
+    string id = 1;
+    string branch_id = 2;
+    string shop_assistant_id = 3;
+    string cashier_id = 4;
+    float price = 5;
+    string payment_type = 6;
+    string status = 7;
+    string client_name = 8;
+    string created_at = 9;
+    string updated_at = 10;
+    string deleted_at = 11;
+}
+
+message SaleCreateReq {
+    string branch_id = 1;
+    string shop_assistant_id = 2;
+    string cashier_id = 3;
+    float price = 4;
+    string payment_type = 5;
+    string status = 6;
+    string client_name = 7;
+}
+
+message SaleCreateResp {
+    string msg = 1;
+}
+
+message SaleGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string branch_id = 3;
+    string client_name = 4;
+    string payment_type = 5;
+    string shop_assistant_id = 6;
+    string cashier_id = 7;
+    string status = 8;
+    string created_at_from = 9;
+    string created_at_to = 10;
+    float price_from = 11;
+    float price_to = 12;
+}
+
+message SaleGetListResp {
+    repeated Sale sales = 1;
+    int64 count = 2;
+}
+
+message SaleIdReq {
+    string id = 1;
+}
+
+message SaleUpdateReq {
+    string id = 1;
+    string branch_id = 2;
+    string shop_assistant_id = 3;
+    string cashier_id = 4;
+    float price = 5;
+    string payment_type = 6;
+    string status = 7;
+    string client_name = 8;
+}
+
+message SaleUpdateResp {
+    string msg = 1;
+}
+
+message SaleDeleteResp {
+    string msg = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package sale_service;
+
+option go_package = "genproto/sale_service";
+
+import "sale_product.proto";
+
+service SaleProductService {
+    rpc Create(SaleProductCreateReq) returns (SaleProductCreateResp) {}
+    rpc GetList(SaleProductGetListReq) returns (SaleProductGetListResp) {}
+    rpc GetById(SaleProductIdReq) returns (SaleProduct) {}
+    rpc Update(SaleProductUpdateReq) returns (SaleProductUpdateResp) {}
+    rpc Delete(SaleProductIdReq) returns (SaleProductDeleteResp) {}
+}
