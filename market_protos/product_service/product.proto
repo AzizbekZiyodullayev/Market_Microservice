@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package product_service;
+
+option go_package = "genproto/product_service";
+
+message Product {
+    string id = 1;
+    string name = 2;
+    float price = 3;
+    string barcode = 4;
+    string category_id = 5;
+    string created_at = 6;
+    string updated_at = 7;
+    string deleted_at = 8;
+}
+
+message ProductCreateReq {
+    string name = 1;
+    float price = 2;
+    string barcode = 3;
+    string category_id = 4;
+}
+
+message ProductCreateResp {
+    string msg = 1;
+}
+
+message ProductGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string name = 3;
+    string barcode = 4;
+}
+
+message ProductGetListResp {
+    repeated Product products = 1;
+    int64 count = 2;
+}
+
+message ProductIdReq {
+    string id = 1;
+}
+
+message ProductUpdateReq {
+    string id = 1;
+    string name = 2;
+    float price = 3;
+    string barcode = 4;
+    string category_id = 5;
+}
+
+message ProductUpdateResp {
+    string msg = 1;
+}
+
+message ProductDeleteResp {
+    string msg = 1;
+}

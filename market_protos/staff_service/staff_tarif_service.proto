@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package staff_service;
+
+option go_package = "genproto/staff_service";
+
+import "staff_tarif.proto";
+
+service StaffTariffService {
+    rpc Create(TariffCreateReq) returns (TariffCreateResp) {}
+    rpc GetList(TariffGetListReq) returns (TariffGetListResp) {}
+    rpc GetById(TariffIdReq) returns (StaffTariff) {}
+    rpc Update(TariffUpdateReq) returns (TariffUpdateResp) {}
+    rpc Delete(TariffIdReq) returns (TariffDeleteResp) {}
+}
